@@ -21,35 +21,20 @@
 #
 # Yes I was so jobless that I did all this
 
-from time import sleep,time
-from Read import Read
+import Read
 from Dynamixel import Dynamixel
+from time import sleep,time
+
 
 # constraints for m2,m5,m8 : -98 to  100
 # constraints for m11      :  98 to -100
 
-
 if __name__=='__main__':
 	dxl=Dynamixel()
-
 	raw_input("press Enter to continue ")
-	motion_set=Read.read_from_file("stand_up.mot")
 
-	for motion in motion_set:
-		dxl.set_position(motion[0])
-		sleep(motion[1])
-	
-	motion_set=Read.read_from_file("init_walk.mot")
-
-	for motion in motion_set:
-		dxl.set_position(motion[0])
-		sleep(motion[1])
-			
-	motion_set=Read.read_from_file("walk.mot")
-
-	while True:
-		i=0
-		for motion in motion_set:
-			i+=1
-			dxl.set_position(motion[0])
-			sleep(motion[1])
+	#Read.do_motion(dxl, "motions/stand_up.mot", 1)
+	Read.do_motion(dxl, "motions/left_turn.mot")
+	#Read.do_motion(dxl, "motions/init_walk.mot", 1)
+	#Read.do_motion(dxl, "motions/walk.mot")
+	#Read.do_motion(dxl, "motions/sit_down.mot", 1)

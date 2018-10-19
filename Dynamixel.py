@@ -3,10 +3,10 @@
 # it would have taken me more time to find it
 
 
-# positive angle - anticlockwise rotation
-
 import pypot.dynamixel
 from time import sleep
+
+# positive angle - anticlockwise rotation
 
 class Dynamixel:
 	def __init__(self):
