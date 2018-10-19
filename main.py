@@ -25,6 +25,7 @@ import Read
 from Dynamixel import Dynamixel
 from time import sleep,time
 
+# TODO- think of offsets
 
 # constraints for m2,m5,m8 : -98 to  100
 # constraints for m11      :  98 to -100
