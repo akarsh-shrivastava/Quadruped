@@ -21,21 +21,15 @@
 #
 # Yes I was so jobless that I did all this
 
-import Read
-from Dynamixel import Dynamixel
+import pypot.robot
 from time import sleep,time
 
-# TODO- think of offsets
+import Read
+from robot import quadruped
 
-# constraints for m2,m5,m8 : -98 to  100
-# constraints for m11      :  98 to -100
 
 if __name__=='__main__':
-	dxl=Dynamixel()
+	robot=pypot.robot.from_config(quadruped)
 	raw_input("press Enter to continue ")
 
-	#Read.do_motion(dxl, "motions/stand_up.mot", 1)
-	Read.do_motion(dxl, "motions/left_turn.mot")
-	#Read.do_motion(dxl, "motions/init_walk.mot", 1)
-	#Read.do_motion(dxl, "motions/walk.mot")
-	#Read.do_motion(dxl, "motions/sit_down.mot", 1)
+	Read.do_motion(robot, "motions/stand_up.mot", 1)

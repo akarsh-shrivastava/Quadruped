@@ -40,15 +40,20 @@ def read_from_file(filename,th_list=[],off_list=[]):
 
 
 
-def do_motion(dxl, filename, times='infinite', th_list=[], off_list=[]):
+def do_motion(robot, filename, times='infinite', th_list=[], off_list=[]):
 	motion_set=read_from_file(filename,th_list=[], off_list=[])
+
+	motor_list=['m1','m2','m3','m4','m5','m6','m7','m8','m9','m10','m11','m12']
 
 	if times=='infinite':
 		while True:
 			try:
 				for motion in motion_set:
-					dxl.set_position(motion[0])
-					sleep(motion[1])
+					robot.goto_position(
+										 position_for_motors = dict( zip(motor_list, motion[0]) ),
+										 duration            = motion[1],
+										 wait                = True,
+									   )
 			except KeyboardInterrupt:
 				break
 
@@ -56,8 +61,11 @@ def do_motion(dxl, filename, times='infinite', th_list=[], off_list=[]):
 		try:
 			for i in range(int(times)):
 				for motion in motion_set:
-					dxl.set_position(motion[0])
-					sleep(motion[1])
+					robot.goto_position(
+										 position_for_motors = dict( zip(motor_list, motion[0]) ),
+										 duration            = motion[1],
+										 wait                = True,
+									   )
 		except ValueError:
 			raise("invalid number of times")
 		except KeyboardInterrupt:
