@@ -30,6 +30,8 @@ from robot import quadruped
 
 if __name__=='__main__':
 	robot=pypot.robot.from_config(quadruped)
+	for m in robot.motors:
+		print m
 	raw_input("press Enter to continue ")
 
 	Read.do_motion(robot, "motions/stand_up.mot", 1)
