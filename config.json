@@ -1,8 +1,8 @@
 
-quadruped={
+{
 	"controllers": {
         "my_dxl_controller": {
-            "sync_read": False,
+            "sync_read": false,
             "attached_motors": ["left_front", "left_back", "right_back", "right_front"],
             "port": "auto"
         }

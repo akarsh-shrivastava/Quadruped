@@ -25,11 +25,10 @@ import pypot.robot
 from time import sleep,time
 
 import Read
-from robot import quadruped
 
 
 if __name__=='__main__':
-	robot=pypot.robot.from_config(quadruped)
+	robot=pypot.robot.from_json("config.json")
 	robot.start_sync()
 
 	for m in robot.motors:
