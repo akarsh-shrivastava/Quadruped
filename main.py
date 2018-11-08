@@ -37,6 +37,6 @@ if __name__=='__main__':
 
 	input("press Enter to continue ")
 
-	Read.do_motion(robot, "motions/stand_up.mot", 1)
+	Read.do_motion(quadruped, "motions/stand_up.mot", 1)
 
 	quadruped.close()
