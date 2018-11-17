@@ -28,15 +28,15 @@ import Read
 
 
 if __name__=='__main__':
-	quadruped = pypot.robot.from_json("config.json")
-	quadruped.start_sync()
+    quadruped = pypot.robot.from_json("config.json")
+    quadruped.start_sync()
 
-	for m in quadruped.motors:
-		m.compliant = False
-		print (m)
+    for m in quadruped.motors:
+        m.compliant = False
+        print (m)
 
-	input("press Enter to continue ")
+    input("press Enter to continue ")
 
-	Read.do_motion(quadruped, "motions/stand_up.mot", 1)
+    Read.do_motion(quadruped, "motions/stand_up.mot", 1)
 
-	quadruped.close()
+    quadruped.close()
