@@ -19,7 +19,7 @@ class Dynamixel:
 		self.ids=self.dxl.scan(range(25))
 		print self.ids
 
-		self.set_speed(75)
+		self.set_speed(500)
 
 	def initial_position(self):
 		self.set_position( [0]*12 )

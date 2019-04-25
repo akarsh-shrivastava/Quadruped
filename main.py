@@ -35,7 +35,8 @@ if __name__=='__main__':
 	raw_input("press Enter to continue ")
 
 	#Read.do_motion(dxl, "motions/stand_up.mot", 1)
-	Read.do_motion(dxl, "motions/left_turn.mot")
+	#Read.do_motion(dxl, "motions/left_turn.mot")
 	#Read.do_motion(dxl, "motions/init_walk.mot", 1)
 	#Read.do_motion(dxl, "motions/walk.mot")
 	#Read.do_motion(dxl, "motions/sit_down.mot", 1)
+	Read.do_motion(dxl, "motions/spot_march.mot")
